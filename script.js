@@ -96,30 +96,31 @@
 
     const contentDB = {
         main: {
-    title: 'Фракция демонов',
-    html: `
-        <div class="creator-card">
-            <div class="creator-avatar">O_o</div>
-            <div class="creator-info">
-                <h3>Мудзан Кибуцуджи</h3>
-                <p><i class="fas fa-user"></i> Создатель сайта, Прародитель демонов</p>
-                <p><i class="fab fa-discord"></i> livgard</p>
-            </div>
-        </div>
-        <div class="info-card">
-            <p>Демоны — преимущественно плотоядный, вампирический вид, основной пищей которых являются люди. Солнечный свет смертельно опасен для них и сожжёт дотла, поэтому вся активность исключительно ночная. Демоны обладают аномально мощными физическими характеристиками и способностью к регенерации, что делает их невосприимчивыми к обычному оружию и даёт возможность с лёгкостью восстанавливаться после любой раны, включая повторное отращивание головы.</p>
-        </div>
-        <h3>Быстрый доступ</h3>
-        <div class="quick-tabs">
-            <div class="quick-tab" data-nav="oath"><i class="fas fa-scroll"></i><span>Клятва крови</span></div>
-            <div class="quick-tab" data-nav="promotion"><i class="fas fa-arrow-up"></i><span>Повышение</span></div>
-            <div class="quick-tab" data-nav="territories"><i class="fas fa-map"></i><span>Территории</span></div>
-            <div class="quick-tab" data-nav="duels"><i class="fas fa-crosshairs"></i><span>Дуэли крови</span></div>
-            <div class="quick-tab" data-nav="limits"><i class="fas fa-tint"></i><span>Повышение предела</span></div>
-            <div class="quick-tab" data-nav="coven"><i class="fas fa-gavel"></i><span>Закон Ковена</span></div>
-        </div>
-    `
-},
+            title: 'Фракция демонов',
+            html: `
+                <div class="creator-card">
+                    <div class="creator-avatar">O_o</div>
+                    <div class="creator-info">
+                        <h3>Мудзан Кибуцуджи</h3>
+                        <p><i class="fas fa-user"></i> Создатель сайта, Прародитель демонов</p>
+                        <p><i class="fab fa-discord"></i> livgard</p>
+                        <p><i class="fas fa-code"></i> Разработка и дизайн: Yufu.su</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <p>Демоны — преимущественно плотоядный, вампирический вид, основной пищей которых являются люди. Солнечный свет смертельно опасен для них и сожжёт дотла, поэтому вся активность исключительно ночная. Демоны обладают аномально мощными физическими характеристиками и способностью к регенерации, что делает их невосприимчивыми к обычному оружию и даёт возможность с лёгкостью восстанавливаться после любой раны, включая повторное отращивание головы.</p>
+                </div>
+                <h3>Быстрый доступ</h3>
+                <div class="quick-tabs">
+                    <div class="quick-tab" data-nav="oath"><i class="fas fa-scroll"></i><span>Клятва крови</span></div>
+                    <div class="quick-tab" data-nav="promotion"><i class="fas fa-arrow-up"></i><span>Повышение</span></div>
+                    <div class="quick-tab" data-nav="territories"><i class="fas fa-map"></i><span>Территории</span></div>
+                    <div class="quick-tab" data-nav="duels"><i class="fas fa-crosshairs"></i><span>Дуэли крови</span></div>
+                    <div class="quick-tab" data-nav="limits"><i class="fas fa-tint"></i><span>Повышение предела</span></div>
+                    <div class="quick-tab" data-nav="coven"><i class="fas fa-gavel"></i><span>Закон Ковена</span></div>
+                </div>
+            `
+        },
         oath: {
             title: 'Клятвы крови',
             html: `
@@ -227,8 +228,8 @@
     };
 
     const territoryRules = {
-        natagumo: '<h3> Гора Натагумо</h3><ul class="rule-list"><li>Не перечить Младшему Брату.</li><li>Не трогать ловушки.</li><li>Покинуть за 10 сек.</li><li>Не прыгать по крышам.</li><li>Главные — Семья Пауков.</li></ul>',
-        otrekshiesya: '<h3> Дом Отрёкшихся</h3><ul class="rule-list"><li>Не перечить членам отряда.</li><li>Своя иерархия в доме.</li><li>Не создавать беспорядок.</li><li>Посещение с разрешения.</li></ul>'
+        natagumo: '<h3>🏔️ Гора Натагумо</h3><ul class="rule-list"><li>Не перечить Младшему Брату.</li><li>Не трогать ловушки.</li><li>Покинуть за 10 сек.</li><li>Не прыгать по крышам.</li><li>Главные — Семья Пауков.</li></ul>',
+        otrekshiesya: '<h3>🏠 Дом Отрёкшихся</h3><ul class="rule-list"><li>Не перечить членам отряда.</li><li>Своя иерархия в доме.</li><li>Не создавать беспорядок.</li><li>Посещение с разрешения.</li></ul>'
     };
 
     function switchTab(pageId) {
@@ -336,6 +337,15 @@
     modalClose.addEventListener('click', () => modal.classList.remove('show'));
     modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('show'); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeMenu(); modal.classList.remove('show'); } });
+
+    const headerBrand = document.querySelector('.header-brand');
+    if (headerBrand) {
+        headerBrand.style.cursor = 'pointer';
+        headerBrand.addEventListener('click', () => {
+            switchTab('main');
+            closeMenu();
+        });
+    }
 
     renderPage('main');
 })();
