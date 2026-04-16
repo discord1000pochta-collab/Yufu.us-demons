@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Demons Server • Yufu.su</title>
+    <meta name="description" content="Фракция демонов — официальный реестр">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-layer" aria-hidden="true">
+        <div class="running-text-container">
+            <div class="running-line" style="--speed: 30s; --opacity: 0.04;">YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US</div>
+            <div class="running-line" style="--speed: 25s; --opacity: 0.03; animation-direction: reverse;">YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US</div>
+            <div class="running-line" style="--speed: 35s; --opacity: 0.02;">YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US</div>
+            <div class="running-line" style="--speed: 28s; --opacity: 0.025; animation-direction: reverse;">YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US</div>
+            <div class="running-line" style="--speed: 40s; --opacity: 0.015;">YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US ✦ YUFU.US</div>
+        </div>
+        <canvas id="bgCanvas"></canvas>
+    </div>
+
+    <header class="app-header">
+        <div class="header-brand">
+            <span class="brand-icon" aria-hidden="true">✦</span>
+            <span class="brand-text">ЮФУ ДЕМОНЫ</span>
+        </div>
+        <div class="header-spacer"></div>
+        <nav class="nav-menu" aria-label="Главное меню">
+            <button class="nav-toggle" id="menuToggle" aria-haspopup="true" aria-expanded="false" aria-label="Открыть меню">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+                <span class="nav-toggle-text">Меню</span>
+            </button>
+            <div class="nav-dropdown" id="menuDropdown" role="menu">
+                <button class="nav-item active" data-page="main" role="menuitem">
+                    <i class="fas fa-home" aria-hidden="true"></i>Главная
+                </button>
+                <button class="nav-item" data-page="oath" role="menuitem">
+                    <i class="fas fa-scroll" aria-hidden="true"></i>Клятва крови
+                </button>
+                <button class="nav-item" data-page="promotion" role="menuitem">
+                    <i class="fas fa-arrow-up" aria-hidden="true"></i>Повышение
+                </button>
+                <button class="nav-item" data-page="territories" role="menuitem">
+                    <i class="fas fa-map" aria-hidden="true"></i>Территории
+                </button>
+                <button class="nav-item" data-page="duels" role="menuitem">
+                    <i class="fas fa-crosshairs" aria-hidden="true"></i>Дуэли крови
+                </button>
+                <button class="nav-item" data-page="limits" role="menuitem">
+                    <i class="fas fa-tint" aria-hidden="true"></i>Повышение предела
+                </button>
+                <button class="nav-item" data-page="coven" role="menuitem">
+                    <i class="fas fa-gavel" aria-hidden="true"></i>Закон Ковена
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" id="mainContent">
+        <div class="content-panel">
+            <h1 class="page-title" id="pageTitle">Фракция демонов</h1>
+            <div class="page-content" id="pageContent"></div>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-label="Информация о территории">
+        <div class="modal-card">
+            <button class="modal-close" id="modalClose" aria-label="Закрыть окно">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
