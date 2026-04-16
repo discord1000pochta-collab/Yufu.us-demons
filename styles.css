@@ -1,6 +1,4 @@
-/* ===== DESIGN TOKENS (Canvas Design System + shadcn/ui) ===== */
 :root {
-    /* HSL Colors — Canvas Design System */
     --background: 345 30% 3%;
     --foreground: 0 0% 95%;
     --primary: 0 72% 47%;
@@ -20,8 +18,6 @@
     --radius-sm: calc(var(--radius) - 0.25rem);
     --radius-lg: calc(var(--radius) + 0.25rem);
     --radius-xl: calc(var(--radius) + 0.5rem);
-
-    /* Spacing Scale */
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-3: 0.75rem;
@@ -32,11 +28,7 @@
     --space-10: 2.5rem;
     --space-12: 3rem;
     --space-16: 4rem;
-
-    /* Touch Targets */
     --touch-min: 2.75rem;
-
-    /* Animation */
     --duration-fast: 150ms;
     --duration-normal: 250ms;
     --duration-slow: 350ms;
@@ -44,7 +36,6 @@
     --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-/* ===== BASE STYLES ===== */
 * {
     margin: 0;
     padding: 0;
@@ -70,14 +61,12 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== FOCUS VISIBLE (Accessibility) ===== */
 :focus-visible {
     outline: 2px solid hsl(var(--ring));
     outline-offset: 2px;
     border-radius: var(--radius-sm);
 }
 
-/* ===== CUSTOM SCROLLBAR ===== */
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -99,7 +88,6 @@ body {
     scrollbar-color: hsl(var(--primary) / 0.3) hsl(var(--muted) / 0.3);
 }
 
-/* ===== BACKGROUND LAYER ===== */
 .bg-layer {
     position: fixed;
     top: 0;
@@ -150,7 +138,6 @@ body {
     100% { transform: translateX(-33.333%); }
 }
 
-/* ===== HEADER ===== */
 .app-header {
     position: fixed;
     top: var(--space-6);
@@ -207,7 +194,6 @@ body {
     flex: 1;
 }
 
-/* Navigation */
 .nav-menu {
     position: relative;
 }
@@ -300,7 +286,6 @@ body {
     font-weight: 600;
 }
 
-/* ===== MAIN CONTENT ===== */
 .main-content {
     padding: 8.75rem var(--space-6) 5rem;
     display: flex;
@@ -355,7 +340,6 @@ body {
     margin: 1.5rem 0 0.75rem;
 }
 
-/* Cards */
 .info-card {
     background: hsl(var(--primary) / 0.04);
     border: 1px solid hsl(var(--border));
@@ -381,7 +365,6 @@ body {
     font-style: italic;
 }
 
-/* Lists */
 .rule-list {
     list-style: none;
     margin: var(--space-4) 0 var(--space-6);
@@ -408,7 +391,6 @@ body {
     font-size: 0.75rem;
 }
 
-/* Tabs */
 .tabs-container {
     display: flex;
     flex-wrap: wrap;
@@ -458,7 +440,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Creator Card */
 .creator-card {
     display: flex;
     align-items: center;
@@ -504,7 +485,6 @@ body {
     width: 1.5rem;
 }
 
-/* Quick Tabs */
 .quick-tabs {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -540,7 +520,6 @@ body {
     color: hsl(var(--foreground) / 0.8);
 }
 
-/* Gallery */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -577,7 +556,6 @@ body {
     border-top: 1px solid hsl(var(--border));
 }
 
-/* Modal */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -637,7 +615,6 @@ body {
     transform: rotate(90deg);
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .app-header {
         padding: 0 var(--space-4);
@@ -679,7 +656,6 @@ body {
     }
 }
 
-/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
